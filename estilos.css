@@ -1,0 +1,265 @@
+:root {
+  --bg: #f7f3ef;
+  --card: #ffffff;
+  --accent: #c5a88a;
+  --text: #222;
+  --muted: #666;
+  --gap: 1rem;
+  --max-width: 980px;
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* Reset y base */
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+
+body {
+  background: linear-gradient(180deg, var(--bg) 0%, #fdfaf7 100%);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+/* Contenedor principal */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+}
+
+.cv {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+  align-items: start;
+}
+
+/* Encabezado */
+.header {
+  display: flex;
+  gap: var(--gap);
+  align-items: center;
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(22, 20, 18, 0.06);
+}
+
+.photo {
+  width: 84px;
+  height: 84px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), #e7d7c1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.role {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.summary {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 6px;
+}
+
+/* Estructura principal */
+.main {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+/* Barra lateral */
+.sidebar {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(22, 20, 18, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 120px;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.contact-item {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.chip {
+  background: #fff;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  font-weight: 600;
+  display: inline-block;
+  width: max-content;
+}
+
+/* Contenido */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(22, 20, 18, 0.04);
+}
+
+.experience-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 0.6rem;
+}
+
+.exp-meta {
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.exp-desc {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill {
+  background: transparent;
+  border: 1px dashed rgba(0, 0, 0, 0.08);
+  padding: 0.4rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.about p {
+  margin: 0;
+  color: var(--text);
+}
+
+.education {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  color: var(--muted);
+}
+
+.projects {
+  margin: 0 0 0 1rem;
+  padding: 0;
+  color: var(--muted);
+}
+
+/* Responsive */
+@media (max-width: 920px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+  .header {
+    flex-direction: row;
+  }
+  .photo {
+    width: 72px;
+    height: 72px;
+  }
+}
+
+@media (max-width: 420px) {
+  body {
+    padding: 1rem;
+    font-size: 15px;
+  }
+  .header {
+    padding: 0.8rem;
+  }
+  .card {
+    padding: 0.8rem;
+  }
+  .photo {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+/* Para impresión */
+@media print {
+  body {
+    background: white;
+    padding: 0;
+  }
+  .container {
+    max-width: 100%;
+  }
+  .header, .card, .sidebar {
+    box-shadow: none;
+    border: 1px solid #eee;
+  }
+}
+.photo {
+  width: 100px;              /* Tamaño del recuadro */
+  height: 100px;
+  border-radius: 12px;
+  overflow: hidden;           /* Hace que la imagen no se salga del contenedor */
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Ajuste de la imagen dentro del recuadro */
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* La imagen se recorta para llenar el espacio sin deformarse */
+  border-radius: 12px;        /* Bordes redondeados */
+}
